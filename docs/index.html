@@ -24,7 +24,7 @@
 			console.log('CHECKING...')
 			window.document.querySelectorAll('iframe').forEach((frame, i) => {
 				setTimeout(_ => {
-					frame.src = `https://${nodeIPinput.value}:${31400 + i}`
+					frame.src = `http://${nodeIPinput.value}:${31400 + i}`
 
 				}, 500)
 			})
