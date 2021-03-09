@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PINode WAN/LAN port check</title>
+</head>
+
+<body>
+	
+	<table><tr>
+		<td></td>
+		<td><div style="display: block;padding: 5px;">
+			<input id="nodeIP" type="text" value="192.168.0.32" onchange="updateIP()" />
+			<button type="submit" onclick="updateIP()">Check</button>
+		</div></td>
+	</tr></table>
+	<script>
+		const nodeIPinput = document.querySelector('#nodeIP')
+		const table = document.querySelector('table')
+		function updateIP() {
+			console.log('CHECKING...')
+			window.document.querySelectorAll('iframe').forEach((frame, i) => {
+				setTimeout(_ => {
+					frame.src = `http://${nodeIPinput.value}:${31400 + i}`
+
+				}, 500)
+			})
+		}
+
+		Array(10).fill(0).forEach((_, i) => {
+			const port = 31400 + i
+			table.insertAdjacentHTML('beforeend', `<tr>
+			<td>${port}</td>
+			<td><iframe height="42px"></iframe></td>
+		</tr>
+		<tr>`)
+		})
+
+	</script>
+</body>
+
+</html>
