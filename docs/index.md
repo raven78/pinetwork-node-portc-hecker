@@ -4,7 +4,8 @@ Before you can use the port checker you need to:
 
 ### 1. Allow this page to acces the ports of your computer over http.
 You need to do this only once, the setting apply only to the domain **raven78.github.io**.
-When done, you can revoke the permissions if you wish. Repeat the same steps and select `Block` insted of `Allow`
+
+When you no longer need this utility, you can revoke the permissions if you wish. Repeat the same steps and select `Block` insted of `Allow`
 
 #### Edge
 1. Click on the **lock** icon in the left of the adress.
